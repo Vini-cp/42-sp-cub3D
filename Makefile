@@ -13,6 +13,7 @@ MINILIBX	:= -lmlx -lXext -lX11
 CC			:=	gcc
 
 SRC			:=	main.c \
+				map/ft_check_input.c \
 				utils/ft_print_error.c
 
 SRC_FOLDER 	:= src

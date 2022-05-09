@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:24:00 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/09 02:09:34 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/09 03:48:35 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	(void) argc;
-	(void) argv;
+	if (ft_check_input(argc, argv) != E_SUCCESS)
+		return (0);
 	return (0);
 }
