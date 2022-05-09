@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/09 03:53:39 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/09 03:54:48 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ typedef struct s_game_set
 	t_player	*player;
 	t_window	*window;
 }	t_game_set;
+
+t_enum_error	ft_print_error(int error_code);
 
 #endif

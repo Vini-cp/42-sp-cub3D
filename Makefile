@@ -12,7 +12,8 @@ MINILIBX	:= -lmlx -lXext -lX11
 
 CC			:=	gcc
 
-SRC			:=	main.c 
+SRC			:=	main.c \
+				utils/ft_print_error.c
 
 SRC_FOLDER 	:= src
 
