@@ -24,8 +24,6 @@ SRCS 		:= $(addprefix ${SRC_FOLDER}/, ${SRC})
 
 OBJS 		:= $(addprefix ${OBJ_FOLDER}/, ${SRCS:.c=.o})
 
-.PHONY: all clean fclean re
-
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ 
 
