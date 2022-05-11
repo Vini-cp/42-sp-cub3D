@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/11 23:58:43 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/12 01:36:54 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,10 @@ typedef struct s_game_set
 }	t_game_set;
 
 t_enum_error	ft_check_input(int argc, char **argv);
+t_enum_error	ft_get_all_infos(char *map_path, t_game_set *game_set);
 
 void			ft_free_map(char **map, int size);
 int				ft_free(t_game_set *game_set);
+t_enum_error	ft_print_error(int error_code);
 
 #endif

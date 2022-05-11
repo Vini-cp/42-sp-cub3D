@@ -14,6 +14,7 @@ CC			:=	gcc
 
 SRC			:=	main.c \
 				map/ft_check_input.c \
+				map/ft_get_all_infos.c \
 				utils/ft_free_map.c \
 				utils/ft_free.c \
 				utils/ft_print_error.c
