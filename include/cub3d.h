@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/09 03:56:43 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/11 23:58:43 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,19 @@
 # include <fcntl.h>
 # include "../libft/libft.h"
 
+# define NUMBER_OF_ASSETS 6
+
 typedef enum e_enum_error
 {
 	E_SUCCESS,
 	E_INVALID_INPUT,
 	E_INVALID_FILE_EXTENSION,
+	E_MALLOC,
+	E_MAP_HAS_EMPTY_LINES,
+	E_FILE_DOES_NOT_EXISTS,
+	E_MAP_HAS_INVALID_CHARS,
+	E_MAP_IS_OPEN,
+	E_MAP_HAS_NO_SPAWNING_POSITION,
 }	t_enum_error;
 
 typedef struct s_assets
@@ -53,6 +61,7 @@ typedef struct s_window
 typedef struct s_scene
 {
 	char	**map;
+	char	**file_infos;
 	char	*north_texture;
 	char	*south_texture;
 	char	*west_texture;
@@ -60,8 +69,8 @@ typedef struct s_scene
 	char	*floor_color;
 	char	*ceilling_color;
 	int		map_height;
-	int		no_collectibles;
-	int		no_exits;
+	int		map_length;
+	int		file_number_of_lines;
 }	t_scene;
 
 typedef struct s_game_set
@@ -74,6 +83,8 @@ typedef struct s_game_set
 }	t_game_set;
 
 t_enum_error	ft_check_input(int argc, char **argv);
-t_enum_error	ft_print_error(int error_code);
+
+void			ft_free_map(char **map, int size);
+int				ft_free(t_game_set *game_set);
 
 #endif

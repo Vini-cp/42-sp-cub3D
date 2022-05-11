@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_free_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/08 02:24:00 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/11 23:59:00 by vcordeir         ###   ########.fr       */
+/*   Created: 2022/05/10 00:14:29 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/05/10 00:17:00 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../../include/cub3d.h"
 
-int	main(int argc, char **argv)
+void	ft_free_map(char **map, int size)
 {
-	t_game_set	game_set;
+	int	i;
 
-	if (ft_check_input(argc, argv) != E_SUCCESS)
-		return (ft_free(&game_set));
-	return (ft_free(&game_set));
+	i = 0;
+	while (i < size)
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
 }

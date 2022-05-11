@@ -14,6 +14,8 @@ CC			:=	gcc
 
 SRC			:=	main.c \
 				map/ft_check_input.c \
+				utils/ft_free_map.c \
+				utils/ft_free.c \
 				utils/ft_print_error.c
 
 SRC_FOLDER 	:= src
@@ -51,7 +53,7 @@ do	: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LFLAGS)
 
 valgrind:
-	valgrind --leak-check=full ./cub3d ./maps/
+	valgrind --leak-check=full ./cub3d ./maps/minimalist.cub
 
 fullvalgrind:
 	valgrind --leak-check=full --show-leak-kinds=all ./minishell
