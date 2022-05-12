@@ -13,6 +13,7 @@ MINILIBX	:= -lmlx -lXext -lX11
 CC			:=	gcc
 
 SRC			:=	main.c \
+				map/ft_assets_checker.c \
 				map/ft_check_input.c \
 				map/ft_get_all_infos.c \
 				map/ft_is_map_open.c \

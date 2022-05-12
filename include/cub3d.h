@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/12 03:25:21 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 01:40:57 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef enum e_enum_error
 	E_MAP_HAS_INVALID_CHARS,
 	E_MAP_IS_OPEN,
 	E_MAP_HAS_NO_SPAWNING_POSITION,
+	E_NULL_ASSET,
 }	t_enum_error;
 
 typedef struct s_assets
@@ -82,6 +83,7 @@ typedef struct s_game_set
 	t_window	*window;
 }	t_game_set;
 
+t_enum_error	ft_assets_checker(t_game_set *game_set);
 t_enum_error	ft_check_input(int argc, char **argv);
 t_enum_error	ft_get_all_infos(char *map_path, t_game_set *game_set);
 t_enum_error	ft_get_map(t_scene *scene);

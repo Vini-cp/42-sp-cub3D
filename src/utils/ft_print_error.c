@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:43:27 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/11 23:30:12 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 01:40:50 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static char	*ft_search_error(int error_code)
 		return ("The map must be closed/surrounded by walls");
 	else if (error_code == E_MAP_HAS_NO_SPAWNING_POSITION)
 		return ("The map has no player position");
+	else if (error_code == E_NULL_ASSET)
+		return ("Assets path must not be null");
 	return ("No message error with this code.");
 }
 

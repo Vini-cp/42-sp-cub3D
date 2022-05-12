@@ -20,6 +20,8 @@ int	main(int argc, char **argv)
 		return (ft_free(&game_set));
 	if (ft_get_all_infos(argv[1], &game_set) != E_SUCCESS)
 		return (ft_free(&game_set));
+	if (ft_assets_checker(&game_set) != E_SUCCESS)
+		return (ft_free(&game_set));
 	if (ft_map_checker(argv[1], &game_set) != E_SUCCESS)
 		return (ft_free(&game_set));
 	return (ft_free(&game_set));
