@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 00:13:06 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/11 23:47:33 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/12 22:57:33 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_free(t_game_set *game_set)
 {
 	t_scene	*scene;
-	
+
 	if (game_set->scene)
 	{
 		scene = (game_set->scene);
