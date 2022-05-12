@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_restructure_map.c                               :+:      :+:    :+:   */
+/*   ft_get_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 03:47:15 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/11 23:05:55 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/12 02:56:59 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static t_enum_error	ft_create_map(t_scene *scene)
 	return (E_SUCCESS);
 }
 
-t_enum_error	ft_restructure_map(t_game_set *game_set)
+t_enum_error	ft_get_map(t_game_set *game_set)
 {
 	t_enum_error	error_code;
 

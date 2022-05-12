@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:24:00 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/12 01:55:09 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/12 02:56:41 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 		return (ft_free(&game_set));
 	if (ft_get_all_infos(argv[1], &game_set) != E_SUCCESS)
 		return (ft_free(&game_set));
-	if (ft_restructure_map(&game_set) != E_SUCCESS)
+	if (ft_get_map(&game_set) != E_SUCCESS)
 		return (ft_free(&game_set));
 	if (ft_map_checker(argv[1], &game_set) != E_SUCCESS)
 		return (ft_free(&game_set));
