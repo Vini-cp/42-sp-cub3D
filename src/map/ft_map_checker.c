@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 03:22:06 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/11 23:30:48 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/12 22:48:43 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,18 +86,19 @@ static t_enum_error	ft_map_has_invalid_chars(t_scene *scene)
 
 t_enum_error	ft_map_checker(char *map_path, t_game_set *game_set)
 {
-	t_scene			*scene;
 	t_enum_error	error_code;
 
-	scene = game_set->scene;
-	error_code = ft_has_map_empty_lines(map_path, scene->map_height);
+	error_code = ft_get_map(game_set->scene);
 	if (error_code != E_SUCCESS)
 		return (ft_print_error(error_code));
-	error_code = ft_map_has_invalid_chars(scene);
+	error_code = ft_has_map_empty_lines(map_path, (game_set->scene)->map_height);
 	if (error_code != E_SUCCESS)
 		return (ft_print_error(error_code));
-	error_code = ft_is_map_open(scene);
+	error_code = ft_map_has_invalid_chars(game_set->scene);
 	if (error_code != E_SUCCESS)
 		return (ft_print_error(error_code));
-	return (E_SUCCESS);	
+	error_code = ft_is_map_open(game_set->scene);
+	if (error_code != E_SUCCESS)
+		return (ft_print_error(error_code));
+	return (E_SUCCESS);
 }
