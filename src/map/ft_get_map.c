@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 03:47:15 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/12 22:46:53 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/12 22:50:29 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,9 @@ static t_enum_error	ft_create_map(t_scene *scene)
 		length = ft_strlen(scene->file_infos[i + NUMBER_OF_ASSETS]);
 		if (length < scene->map_length)
 			scene->map[i] = \
-				ft_fill_line_with_espaces(scene->file_infos[i + NUMBER_OF_ASSETS], \
-							scene->map_length);
+				ft_fill_line_with_espaces(\
+					scene->file_infos[i + NUMBER_OF_ASSETS], \
+					scene->map_length);
 		else
 			scene->map[i] = ft_strdup(scene->file_infos[i + NUMBER_OF_ASSETS]);
 		if (scene->map == NULL)
@@ -85,5 +86,5 @@ t_enum_error	ft_get_map(t_scene *scene)
 	scene->map_height = scene->file_number_of_lines - NUMBER_OF_ASSETS;
 	scene->map_length = ft_get_map_length(scene);
 	error_code = ft_create_map(scene);
-	return(error_code);
+	return (error_code);
 }
