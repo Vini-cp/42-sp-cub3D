@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_assets.c                                    :+:      :+:    :+:   */
+/*   ft_assets_checker.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 01:46:40 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/11 21:24:03 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 20:22:02 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ static t_enum_error	ft_is_asset_null(t_scene *scene)
 	return (E_SUCCESS);
 }
 
-t_enum_error	ft_assets_checker(t_game_set *game_set)
+void	ft_assets_checker(t_game_set *game_set)
 {
 	t_enum_error	error_code;
 
 	ft_initialize_textures(game_set->scene);
 	ft_get_assets(game_set->scene);
 	error_code = ft_is_asset_null(game_set->scene);
-	return (error_code);
+	ft_print_error(error_code, game_set, ft_free);
 }

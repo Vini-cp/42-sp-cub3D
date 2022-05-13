@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_map.c                                       :+:      :+:    :+:   */
+/*   ft_get_all_infos.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:05:24 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/11 23:41:17 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 20:23:23 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,13 @@ static t_enum_error	ft_get_file_infos(char *map_path, t_scene *scene)
 	return (E_SUCCESS);
 }
 
-t_enum_error	ft_get_all_infos(char *map_path, t_game_set *game_set)
+void	ft_get_all_infos(char *map_path, t_game_set *game_set)
 {
 	t_enum_error	error_code;
 
 	game_set->scene = malloc(sizeof(t_scene));
 	error_code = ft_get_number_of_lines(map_path, game_set->scene);
-	if (error_code != E_SUCCESS)
-		return (ft_print_error(error_code));
+	ft_print_error(error_code, game_set, ft_free);
 	error_code = ft_get_file_infos(map_path, game_set->scene);
-	if (error_code != E_SUCCESS)
-		return (ft_print_error(error_code));
-	return (E_SUCCESS);
+	ft_print_error(error_code, game_set, ft_free);
 }

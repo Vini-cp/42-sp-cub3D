@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 03:47:15 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/12 22:50:29 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 20:26:16 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ static t_enum_error	ft_create_map(t_scene *scene)
 	return (E_SUCCESS);
 }
 
-t_enum_error	ft_get_map(t_scene *scene)
+void	ft_get_map(t_scene *scene)
 {
 	t_enum_error	error_code;
 
 	scene->map_height = scene->file_number_of_lines - NUMBER_OF_ASSETS;
 	scene->map_length = ft_get_map_length(scene);
 	error_code = ft_create_map(scene);
-	return (error_code);
+	ft_print_error(error_code, scene, ft_free_scene);
 }

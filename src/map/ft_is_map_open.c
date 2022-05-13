@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:55:23 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/12 22:52:36 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 20:26:23 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static t_enum_error	ft_check_middle_lines(char *line,
 	return (E_SUCCESS);
 }
 
-t_enum_error	ft_is_map_open(t_scene *scene)
+void	ft_is_map_open(t_scene *scene)
 {
 	int				i;
 	t_enum_error	error_code;
@@ -71,8 +71,7 @@ t_enum_error	ft_is_map_open(t_scene *scene)
 				ft_check_middle_lines(scene->map[i], scene->map[i - 1], \
 					scene->map[i + 1], scene->map_length);
 		if (error_code != E_SUCCESS)
-			return (error_code);
+			ft_print_error(error_code, scene, ft_free_scene);
 		i++;
 	}
-	return (E_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:37:22 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/11 03:24:28 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 20:22:59 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,12 @@ static t_enum_error	ft_check_file_extension(char *file_name)
 	return (E_INVALID_FILE_EXTENSION);
 }
 
-t_enum_error	ft_check_input(int argc, char **argv)
+void	ft_check_input(int argc, char **argv)
 {
 	t_enum_error	error_code;
 
 	if (argc != 2)
-		return (ft_print_error(E_INVALID_INPUT));
+		ft_print_error(E_INVALID_INPUT, NULL, NULL);
 	error_code = ft_check_file_extension(argv[1]);
-	if (error_code != E_SUCCESS)
-		return (ft_print_error(error_code));
-	return (E_SUCCESS);
+	ft_print_error(error_code, NULL, NULL);
 }

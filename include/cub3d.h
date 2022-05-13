@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 01:40:57 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 20:37:51 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,17 @@ typedef struct s_game_set
 	t_window	*window;
 }	t_game_set;
 
-t_enum_error	ft_assets_checker(t_game_set *game_set);
-t_enum_error	ft_check_input(int argc, char **argv);
-t_enum_error	ft_get_all_infos(char *map_path, t_game_set *game_set);
-t_enum_error	ft_get_map(t_scene *scene);
-t_enum_error	ft_is_map_open(t_scene *scene);
-t_enum_error	ft_map_checker(char *map_path, t_game_set *game_set);
+void	ft_assets_checker(t_game_set *game_set);
+void	ft_check_input(int argc, char **argv);
+void	ft_get_all_infos(char *map_path, t_game_set *game_set);
+void	ft_get_map(t_scene *scene);
+void	ft_is_map_open(t_scene *scene);
+void	ft_map_checker(char *map_path, t_game_set *game_set);
 
-void			ft_free_map(char **map, int size);
-int				ft_free(t_game_set *game_set);
-t_enum_error	ft_print_error(int error_code);
+void	ft_free_map(char **map, int size);
+void	ft_free_scene(void *param);
+void	ft_free(void *param);
+void	ft_print_error(t_enum_error error_code, void *param,
+			void (*free_param)(void *));
 
 #endif

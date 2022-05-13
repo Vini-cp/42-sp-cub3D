@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_free_scene.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 00:13:06 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 20:36:48 by vcordeir         ###   ########.fr       */
+/*   Created: 2022/05/13 20:19:15 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/05/13 20:37:19 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
 
-void	ft_free(void *param)
+void	ft_free_scene(void *param)
 {
-	t_game_set *game_set;
+	t_scene *scene;
 
-	game_set = (t_game_set *)param;
-	if (game_set)
-	{
-		if (game_set->scene)
-			ft_free_scene(game_set->scene);
-	}
+	scene = (t_scene *)param;
+	if (scene->file_infos)
+		ft_free_map(scene->file_infos, scene->file_number_of_lines);
+	if (scene->map)
+		ft_free_map(scene->map, scene->map_height);
+	free(scene);
 }

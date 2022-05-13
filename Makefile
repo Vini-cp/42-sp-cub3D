@@ -20,6 +20,7 @@ SRC			:=	main.c \
 				map/ft_map_checker.c \
 				map/ft_get_map.c \
 				utils/ft_free_map.c \
+				utils/ft_free_scene.c \
 				utils/ft_free.c \
 				utils/ft_print_error.c
 

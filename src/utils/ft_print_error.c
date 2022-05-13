@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:43:27 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 01:40:50 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 20:24:02 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,14 @@ static char	*ft_search_error(int error_code)
 	return ("No message error with this code.");
 }
 
-t_enum_error	ft_print_error(int error_code)
+void	ft_print_error(t_enum_error error_code,
+						void *param,
+						void (*free_param)(void *))
 {
 	if (error_code == E_SUCCESS)
-		return (E_SUCCESS);
+		return ;
 	printf("Error\n%s\n", ft_search_error(error_code));
-	return (error_code);
+	if (param != NULL)
+		free_param(param);
+	exit(0);
 }
