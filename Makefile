@@ -18,6 +18,7 @@ SRC			:=	main.c \
 				map/ft_get_all_infos.c \
 				map/ft_is_map_open.c \
 				map/ft_map_checker.c \
+				map/ft_load_player.c \
 				map/ft_get_map.c \
 				utils/ft_free_map.c \
 				utils/ft_free_scene.c \

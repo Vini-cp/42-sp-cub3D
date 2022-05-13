@@ -6,11 +6,20 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:05:24 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 20:23:23 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 21:36:03 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
+
+static void	ft_initialize_game_set(t_game_set *game_set)
+{
+	game_set->game_won = 0;
+	game_set->scene = NULL;
+	game_set->assets = NULL;
+	game_set->player = NULL;
+	game_set->window = NULL;
+}
 
 static t_enum_error	ft_get_number_of_lines(char *map_path, t_scene *scene)
 {
@@ -65,6 +74,7 @@ void	ft_get_all_infos(char *map_path, t_game_set *game_set)
 {
 	t_enum_error	error_code;
 
+	ft_initialize_game_set(game_set);
 	game_set->scene = malloc(sizeof(t_scene));
 	error_code = ft_get_number_of_lines(map_path, game_set->scene);
 	ft_print_error(error_code, game_set, ft_free);

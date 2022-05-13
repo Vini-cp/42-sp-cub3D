@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:43:27 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 20:24:02 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 21:10:07 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ static char	*ft_search_error(int error_code)
 		return ("The map has no player position");
 	else if (error_code == E_NULL_ASSET)
 		return ("Assets path must not be null");
+	else if (error_code == E_NO_PLAYER)
+		return ("Number of players must be strictly equals to one");
 	return ("No message error with this code.");
 }
 

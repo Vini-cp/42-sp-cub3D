@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 20:37:51 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 21:25:05 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,26 @@ typedef enum e_enum_error
 	E_MAP_IS_OPEN,
 	E_MAP_HAS_NO_SPAWNING_POSITION,
 	E_NULL_ASSET,
+	E_NO_PLAYER,
 }	t_enum_error;
 
 typedef struct s_assets
 {
 	void	*player;
-	void	*wall;
-	void	*background;
-	void	*exit;
-	void	*collectible;
+	void	*enemy;
+	void	*north;
+	void	*south;
+	void	*west;
+	void	*east;
+	void	*floor;
+	void	*ceilling;
 }	t_assets;
 
 typedef struct s_player
 {
-	int	player_position_x;
-	int	player_position_y;
-	int	player_movements;
+	int	x;
+	int	y;
+	int	direction;
 }	t_player;
 
 typedef struct s_window
@@ -88,6 +92,7 @@ void	ft_check_input(int argc, char **argv);
 void	ft_get_all_infos(char *map_path, t_game_set *game_set);
 void	ft_get_map(t_scene *scene);
 void	ft_is_map_open(t_scene *scene);
+void	ft_load_player(t_game_set *game_set);
 void	ft_map_checker(char *map_path, t_game_set *game_set);
 
 void	ft_free_map(char **map, int size);

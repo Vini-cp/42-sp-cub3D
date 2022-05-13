@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:19:15 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 20:37:19 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 21:26:33 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free_scene(void *param)
 {
-	t_scene *scene;
+	t_scene	*scene;
 
 	scene = (t_scene *)param;
 	if (scene->file_infos)
