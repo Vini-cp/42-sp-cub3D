@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 01:46:40 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 20:22:02 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 22:27:43 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,17 @@ static void	ft_get_assets(t_scene *scene)
 	}
 }
 
-static t_enum_error	ft_is_asset_null(t_scene *scene)
+static void	ft_is_asset_null(t_scene *scene)
 {
 	if (scene->north_texture == NULL || scene->south_texture == NULL || \
 		scene->west_texture == NULL || scene->east_texture == NULL || \
 		scene->floor_color == NULL || scene->ceilling_color == NULL)
-		return (E_NULL_ASSET);
-	return (E_SUCCESS);
+		ft_print_error(E_NULL_ASSET, scene, ft_free_scene);
 }
 
 void	ft_assets_checker(t_game_set *game_set)
 {
-	t_enum_error	error_code;
-
 	ft_initialize_textures(game_set->scene);
 	ft_get_assets(game_set->scene);
-	error_code = ft_is_asset_null(game_set->scene);
-	ft_print_error(error_code, game_set, ft_free);
+	ft_is_asset_null(game_set->scene);
 }

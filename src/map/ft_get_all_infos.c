@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:05:24 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 21:36:03 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 22:43:45 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_initialize_game_set(t_game_set *game_set)
 	game_set->window = NULL;
 }
 
-static t_enum_error	ft_get_number_of_lines(char *map_path, t_scene *scene)
+static void	ft_get_number_of_lines(char *map_path, t_scene *scene)
 {
 	int		fd;
 	int		read_output;
@@ -31,7 +31,7 @@ static t_enum_error	ft_get_number_of_lines(char *map_path, t_scene *scene)
 	scene->file_number_of_lines = 0;
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
-		return (E_FILE_DOES_NOT_EXISTS);
+		ft_print_error(E_FILE_DOES_NOT_EXISTS, scene, ft_free_scene);
 	while (read_output == 1)
 	{
 		read_output = get_next_line(fd, &line);
@@ -40,10 +40,9 @@ static t_enum_error	ft_get_number_of_lines(char *map_path, t_scene *scene)
 		free(line);
 	}
 	close(fd);
-	return (E_SUCCESS);
 }
 
-static t_enum_error	ft_get_file_infos(char *map_path, t_scene *scene)
+static void	ft_get_file_infos(char *map_path, t_scene *scene)
 {
 	int		i;
 	int		fd;
@@ -55,7 +54,7 @@ static t_enum_error	ft_get_file_infos(char *map_path, t_scene *scene)
 	scene->file_infos = malloc(scene->file_number_of_lines * sizeof(char *));
 	fd = open(map_path, O_RDONLY);
 	if (fd < 0)
-		return (E_FILE_DOES_NOT_EXISTS);
+		ft_print_error(E_FILE_DOES_NOT_EXISTS, scene, ft_free_scene);
 	while (read_output == 1)
 	{
 		read_output = get_next_line(fd, &line);
@@ -67,17 +66,12 @@ static t_enum_error	ft_get_file_infos(char *map_path, t_scene *scene)
 		free(line);
 	}
 	close(fd);
-	return (E_SUCCESS);
 }
 
 void	ft_get_all_infos(char *map_path, t_game_set *game_set)
 {
-	t_enum_error	error_code;
-
 	ft_initialize_game_set(game_set);
 	game_set->scene = malloc(sizeof(t_scene));
-	error_code = ft_get_number_of_lines(map_path, game_set->scene);
-	ft_print_error(error_code, game_set, ft_free);
-	error_code = ft_get_file_infos(map_path, game_set->scene);
-	ft_print_error(error_code, game_set, ft_free);
+	ft_get_number_of_lines(map_path, game_set->scene);
+	ft_get_file_infos(map_path, game_set->scene);
 }

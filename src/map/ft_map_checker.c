@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 03:22:06 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 20:25:02 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/13 22:44:33 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static t_enum_error	ft_has_map_empty_lines(char *file_name, int map_height)
 	return (helper.error_code);
 }
 
-static t_enum_error	ft_map_has_invalid_chars(t_scene *scene)
+static void	ft_map_has_invalid_chars(t_scene *scene)
 {
 	int	i;
 	int	j;
@@ -77,12 +77,11 @@ static t_enum_error	ft_map_has_invalid_chars(t_scene *scene)
 				&& scene->map[i][j] != '1' && scene->map[i][j] != 'N' \
 				&& scene->map[i][j] != 'S' && scene->map[i][j] != 'E' \
 				&& scene->map[i][j] != 'W')
-				return (E_MAP_HAS_INVALID_CHARS);
+				ft_print_error(E_MAP_HAS_INVALID_CHARS, scene, ft_free_scene);
 			j++;
 		}
 		i++;
 	}
-	return (E_SUCCESS);
 }
 
 void	ft_map_checker(char *map_path, t_game_set *game_set)
@@ -93,7 +92,6 @@ void	ft_map_checker(char *map_path, t_game_set *game_set)
 	error_code = ft_has_map_empty_lines(map_path, \
 		(game_set->scene)->map_height);
 	ft_print_error(error_code, game_set, ft_free);
-	error_code = ft_map_has_invalid_chars(game_set->scene);
-	ft_print_error(error_code, game_set, ft_free);
+	ft_map_has_invalid_chars(game_set->scene);
 	ft_is_map_open(game_set->scene);
 }
