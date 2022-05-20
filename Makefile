@@ -6,16 +6,25 @@ LIBFT		:=	libft
 
 CFLAGS		:=	-g3 -Wall -Wextra -Werror
 
-LFLAGS		:=	-Llibft -lft
+LFLAGS		:=	-Llibft -lft -lm
 
 MINILIBX	:= -lmlx -lXext -lX11
 
 CC			:=	gcc
 
 SRC			:=	main.c \
-				map/ft_assets_checker.c \
-				map/ft_check_input.c \
-				map/ft_get_all_infos.c \
+				draw/ft_draw_line.c \
+				draw/ft_draw_player.c \
+				draw/ft_draw_square.c \
+				input/ft_assets_checker.c \
+				input/ft_check_input.c \
+				input/ft_get_all_infos.c \
+				loop/ft_build_images.c \
+				loop/ft_game_loop.c \
+				loop/ft_load_window.c \
+				loop/ft_move_player.c \
+				loop/ft_render.c \
+				loop/ft_update.c \
 				map/ft_is_map_open.c \
 				map/ft_map_checker.c \
 				map/ft_load_player.c \
@@ -63,4 +72,4 @@ valgrind:
 	valgrind --leak-check=full ./cub3d ./maps/minimalist.cub
 
 fullvalgrind:
-	valgrind --leak-check=full --show-leak-kinds=all ./minishell
+	valgrind --leak-check=full --show-leak-kinds=all ./cub3d ./maps/minimalist.cub
