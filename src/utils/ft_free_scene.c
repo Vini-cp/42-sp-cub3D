@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:19:15 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 21:26:33 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/19 03:10:34 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,17 @@ void	ft_free_scene(void *param)
 		ft_free_map(scene->file_infos, scene->file_number_of_lines);
 	if (scene->map)
 		ft_free_map(scene->map, scene->map_height);
+	if (scene->north_texture)
+		free(scene->north_texture);
+	if (scene->south_texture)
+		free(scene->south_texture);
+	if (scene->west_texture)
+		free(scene->west_texture);
+	if (scene->east_texture)
+		free(scene->east_texture);
+	if (scene->floor_color)
+		free(scene->floor_color);
+	if (scene->ceilling_color)
+		free(scene->ceilling_color);
 	free(scene);
 }
