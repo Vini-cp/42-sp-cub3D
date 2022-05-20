@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:55:50 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 21:24:49 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/20 00:39:39 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ static void	ft_load_player_positions(t_scene *scene, t_player *player)
 			if (scene->map[i][j] == 'N' || scene->map[i][j] == 'S' || \
 				scene->map[i][j] == 'W' || scene->map[i][j] == 'E')
 			{
-				player->x = j;
-				player->x = i;
-				player->direction = scene->map[i][j];
+				player->x = j * TILE_SIZE + 5;
+				player->y = i * TILE_SIZE + 5;
+				player->initial_direction = scene->map[i][j];
 			}
 			j++;
 		}
@@ -67,4 +67,14 @@ void	ft_load_player(t_game_set *game_set)
 	ft_check_no_players(game_set);
 	game_set->player = malloc(sizeof(t_player));
 	ft_load_player_positions(game_set->scene, game_set->player);
+	(game_set->player)->turn_direction = 0;
+    (game_set->player)->walk_direction = 0;
+	if ((game_set->player)->initial_direction == 'E')
+    	(game_set->player)->rotation_angle = 0;
+	else if ((game_set->player)->initial_direction == 'N')
+    	(game_set->player)->rotation_angle = PI / 2;
+	else if ((game_set->player)->initial_direction == 'W')
+    	(game_set->player)->rotation_angle = PI;
+	else if ((game_set->player)->initial_direction == 'S')
+    	(game_set->player)->rotation_angle = 3 * PI / 2;
 }
