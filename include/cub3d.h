@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 04:02:37 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:21:04 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <mlx.h>
 # include <math.h>
 # include "../libft/libft.h"
+# include "player.h"
+# include "scene.h"
 
 # define PI 3.142857
 
@@ -33,13 +35,6 @@
 #define TILE_SIZE 20
 #define LENGTH 800
 #define HEIGHT 600
-
-# define WALK_SPEED 1.0f
-# define ROT_SPEED 0.1f
-
-# define RED 0x00FF0000
-# define BLUE 0x000000FF
-# define DARK 0x00000000
 
 typedef enum e_enum_error
 {
@@ -58,59 +53,13 @@ typedef enum e_enum_error
 	E_MLX_WIN,
 }	t_enum_error;
 
-typedef struct s_image
-{
-	void	*img;
-	int		width;
-	int		height;
-}	t_image;
-
-typedef struct s_assets
-{
-	t_image	player;
-	t_image	wall;
-	t_image	background;
-	t_image	enemy;
-	t_image	north;
-	t_image	south;
-	t_image	west;
-	t_image	east;
-	t_image	floor;
-	t_image	ceilling;
-}	t_assets;
-
-typedef struct s_player
-{
-	float	x;
-	float	y;
-	char	initial_direction;
-	int		turn_direction;
-    int		walk_direction;
-    float	rotation_angle;
-}	t_player;
-
 typedef struct s_window
 {
-	int		img_width;
-	int		img_height;
+	int		width;
+	int		height;
 	void	*mlx;
 	void	*win;
 }	t_window;
-
-typedef struct s_scene
-{
-	char	**map;
-	char	**file_infos;
-	char	*north_texture;
-	char	*south_texture;
-	char	*west_texture;
-	char	*east_texture;
-	char	*floor_color;
-	char	*ceilling_color;
-	int		map_height;
-	int		map_length;
-	int		file_number_of_lines;
-}	t_scene;
 
 typedef struct s_game_set
 {
