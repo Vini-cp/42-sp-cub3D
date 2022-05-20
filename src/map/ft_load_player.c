@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:55:50 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 00:39:39 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:13:33 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,10 @@ void	ft_load_player(t_game_set *game_set)
     (game_set->player)->walk_direction = 0;
 	if ((game_set->player)->initial_direction == 'E')
     	(game_set->player)->rotation_angle = 0;
-	else if ((game_set->player)->initial_direction == 'N')
+	else if ((game_set->player)->initial_direction == 'S')
     	(game_set->player)->rotation_angle = PI / 2;
 	else if ((game_set->player)->initial_direction == 'W')
     	(game_set->player)->rotation_angle = PI;
-	else if ((game_set->player)->initial_direction == 'S')
+	else if ((game_set->player)->initial_direction == 'N')
     	(game_set->player)->rotation_angle = 3 * PI / 2;
 }
