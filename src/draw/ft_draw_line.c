@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 01:34:24 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 03:38:15 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:25:41 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static void	ft_swap(int *a, int *b)
 
 static void	ft_initialize_line(t_line *line, t_player *player, float distance)
 {
-	line->x0 = player->x + 5;
-	line->y0 = player->y + 5;
+	line->x0 = player->x + (TILE_SIZE - PLAYER_WIDTH) / 2;
+	line->y0 = player->y + (TILE_SIZE - PLAYER_HEIGHT) / 2;
 	line->x1 = cos(player->rotation_angle) * distance + line->x0;
 	line->y1 = sin(player->rotation_angle) * distance + line->y0;
 	line->step = 0;
