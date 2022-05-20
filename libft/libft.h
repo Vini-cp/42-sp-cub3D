@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 20:11:25 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/01/30 03:14:35 by coder            ###   ########.fr       */
+/*   Updated: 2022/05/20 03:37:48 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_list
 void				*ft_calloc(size_t nelem, size_t elsize);
 void				ft_bzero(void *s, size_t n);
 int					ft_atoi(const char *str);
+float				ft_abs_float(float a);
 int					ft_abs(int a);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);

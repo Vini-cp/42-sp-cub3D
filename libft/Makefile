@@ -24,6 +24,7 @@ SRC		:=	ft_atoi.c \
 			ft_strlen.c \
 			ft_substr.c \
 			ft_abs.c \
+			ft_abs_float.c \
 			ft_tolower.c \
 			ft_toupper.c \
 			ft_strjoin.c \
