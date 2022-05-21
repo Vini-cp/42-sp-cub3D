@@ -6,12 +6,14 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:17:56 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 20:19:10 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:57:43 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCENE_H
 # define SCENE_H
+
+# define NUMBER_OF_ASSETS 6
 
 # define RED 0x00FF0000
 # define BLUE 0x000000FF

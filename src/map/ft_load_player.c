@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:55:50 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 20:25:16 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:00:37 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	ft_load_player(t_game_set *game_set)
 	ft_load_player_positions(game_set->scene, game_set->player);
 	(game_set->player)->turn_direction = 0;
     (game_set->player)->walk_direction = 0;
+	(game_set->player)->side_direction = 0;
 	if ((game_set->player)->initial_direction == 'E')
     	(game_set->player)->rotation_angle = 0;
 	else if ((game_set->player)->initial_direction == 'S')

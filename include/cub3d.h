@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 20:21:04 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:33:00 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@
 # include "player.h"
 # include "scene.h"
 
-# define PI 3.142857
+# define PI 3.1415926535f
 
-# define NUMBER_OF_ASSETS 6
 # define ESC 65307
 # define UP 119
 # define DOWN 115
 # define LEFT 97
 # define RIGHT 100
+# define LEFT_ARROW 65361
+# define RIGHT_ARROW 65363
 
 #define TILE_SIZE 20
 #define LENGTH 800
