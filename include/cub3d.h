@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/22 02:25:08 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:51:43 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ typedef struct s_game_set
 	t_window	*window;
 }	t_game_set;
 
+void	ft_build_images(t_game_set *game_set);
 void	ft_draw_line(t_window *window, t_player *player, float size, int color);
 void	ft_draw_player(int x, int y, int color, t_window *window);
 void	ft_draw_square(int x_start, int y_start, int color, t_window *window);
@@ -79,7 +80,6 @@ void	ft_assets_checker(t_game_set *game_set);
 void	ft_check_input(int argc, char **argv);
 void	ft_get_all_infos(char *map_path, t_game_set *game_set);
 
-void	ft_build_images(t_game_set *game_set);
 void	ft_game_loop(t_game_set *game_set);
 void	ft_load_window(t_game_set *game_set);
 void	ft_move_player(t_game_set *game_set);

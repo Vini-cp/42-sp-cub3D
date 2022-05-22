@@ -13,13 +13,13 @@ MINILIBX	:= -lmlx -lXext -lX11
 CC			:=	gcc
 
 SRC			:=	main.c \
+				draw/ft_build_images.c \
 				draw/ft_draw_line.c \
 				draw/ft_draw_player.c \
 				draw/ft_draw_square.c \
 				input/ft_assets_checker.c \
 				input/ft_check_input.c \
 				input/ft_get_all_infos.c \
-				loop/ft_build_images.c \
 				loop/ft_game_loop.c \
 				loop/ft_load_window.c \
 				loop/ft_move_player.c \
