@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:14:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 21:20:28 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:26:28 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ typedef struct s_player
 	float	y;
 	char	initial_direction;
 	int		turn_direction;
-    int		walk_direction;
+	int		walk_direction;
 	int		side_direction;
-    float	rotation_angle;
+	float	rotation_angle;
 }	t_player;
 
 #endif

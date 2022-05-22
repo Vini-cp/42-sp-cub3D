@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:17:56 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 20:57:43 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:32:58 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # define NUMBER_OF_ASSETS 6
 
+# define PLAYER "./assets/player.xpm"
+# define WALL "./assets/wall.xpm"
+# define BACKGROUND "./assets/background.xpm"
+	
 # define RED 0x00FF0000
 # define BLUE 0x000000FF
 # define DARK 0x00000000

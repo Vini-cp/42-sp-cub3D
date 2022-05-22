@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 21:33:00 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:25:08 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@
 # define LEFT_ARROW 65361
 # define RIGHT_ARROW 65363
 
-#define TILE_SIZE 20
-#define LENGTH 800
-#define HEIGHT 600
+# define TILE_SIZE 20
+# define LENGTH 800
+# define HEIGHT 600
 
 typedef enum e_enum_error
 {
@@ -64,7 +64,7 @@ typedef struct s_window
 
 typedef struct s_game_set
 {
-	int			game_won;
+	int			number_of_rays;
 	t_scene		*scene;
 	t_assets	*assets;
 	t_player	*player;

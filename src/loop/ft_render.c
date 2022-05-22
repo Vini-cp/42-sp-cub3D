@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 00:52:21 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 04:10:00 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:35:51 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ static void	ft_put_image(t_window *window, void *img, int x, int y)
 	mlx_put_image_to_window(window->mlx, window->win, img, x, y);
 }
 
-static void	ft_render_minimap(t_scene *scene, t_window *window, t_assets *assets)
+static void	ft_render_minimap(t_scene *scene,
+							t_window *window,
+							t_assets *assets)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	while (i < scene->map_height)
 	{
@@ -29,16 +31,20 @@ static void	ft_render_minimap(t_scene *scene, t_window *window, t_assets *assets
 		while (j < scene->map_length)
 		{
 			if (scene->map[i][j] == '1')
-				ft_put_image(window, (assets->wall).img, j * TILE_SIZE, i * TILE_SIZE);
+				ft_put_image(window, \
+					(assets->wall).img, j * TILE_SIZE, i * TILE_SIZE);
 			else if (scene->map[i][j] != '1' && scene->map[i][j] != ' ')
-				ft_put_image(window, (assets->background).img, j * TILE_SIZE, i * TILE_SIZE);
+				ft_put_image(window, \
+					(assets->background).img, j * TILE_SIZE, i * TILE_SIZE);
 			j++;
 		}
 		i++;
 	}
 }
 
-static void	ft_render_player(t_window *window, t_assets *assets, t_player *player)
+static void	ft_render_player(t_window *window,
+							t_assets *assets,
+							t_player *player)
 {
 	ft_put_image(window, (assets->player).img, player->x, player->y);
 }

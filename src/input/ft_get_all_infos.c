@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:05:24 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 22:43:45 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:40:27 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	ft_initialize_game_set(t_game_set *game_set)
 {
-	game_set->game_won = 0;
 	game_set->scene = NULL;
 	game_set->assets = NULL;
 	game_set->player = NULL;

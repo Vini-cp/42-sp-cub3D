@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:56:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 04:03:44 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:30:14 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_load_window(t_game_set *game_set)
 
 	game_set->window = malloc(sizeof(t_window));
 	window = game_set->window;
-
 	window->mlx = mlx_init();
 	if (window->mlx == NULL)
 		ft_print_error(E_MLX, game_set, ft_free);

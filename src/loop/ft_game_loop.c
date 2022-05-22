@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 01:07:10 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/20 21:47:02 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:29:56 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	ft_game_loop(t_game_set *game_set)
 	t_window	*window;
 
 	window = game_set->window;
-	mlx_hook(window->win, 2, (1L<<0), ft_key_press, game_set);
-	mlx_hook(window->win, 3, (1L<<1), ft_key_release, game_set);
+	mlx_hook(window->win, 2, (1L << 0), ft_key_press, game_set);
+	mlx_hook(window->win, 3, (1L << 1), ft_key_release, game_set);
 	mlx_hook(window->win, 17, 0L, ft_exit_hook, game_set);
 	mlx_loop_hook(window->mlx, ft_update, game_set);
 	mlx_loop(window->mlx);

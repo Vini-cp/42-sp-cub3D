@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 01:44:40 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/21 02:55:54 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:35:34 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,26 +44,26 @@ void	ft_move_player(t_game_set *game_set)
 	t_player	*player;
 	float		walk_step;
 	float		side_step;
-	float		new_x_position;
-	float		new_y_position;
+	float		new_x;
+	float		new_y;
 
 	player = game_set->player;
 	player->rotation_angle += player->turn_direction * ROT_SPEED;
 	player->rotation_angle = ft_normalize_angle(player->rotation_angle);
 	walk_step = player->walk_direction * WALK_SPEED;
-	new_x_position = player->x + cos(player->rotation_angle + PI) * walk_step;
-	new_y_position = player->y + sin(player->rotation_angle + PI) * walk_step;
-	if (!ft_has_collision(game_set->scene, new_x_position, new_y_position))
+	new_x = player->x + cos(player->rotation_angle + PI) * walk_step;
+	new_y = player->y + sin(player->rotation_angle + PI) * walk_step;
+	if (!ft_has_collision(game_set->scene, new_x, new_y))
 	{
-		player->x = new_x_position;
-		player->y = new_y_position;
+		player->x = new_x;
+		player->y = new_y;
 	}
 	side_step = player->side_direction * WALK_SPEED;
-	new_x_position = player->x + cos(player->rotation_angle + PI / 2) * side_step;
-	new_y_position = player->y + sin(player->rotation_angle + PI / 2) * side_step;
-	if (!ft_has_collision(game_set->scene, new_x_position, new_y_position))
+	new_x = player->x + cos(player->rotation_angle + PI / 2) * side_step;
+	new_y = player->y + sin(player->rotation_angle + PI / 2) * side_step;
+	if (!ft_has_collision(game_set->scene, new_x, new_y))
 	{
-		player->x = new_x_position;
-		player->y = new_y_position;
+		player->x = new_x;
+		player->y = new_y;
 	}
 }
