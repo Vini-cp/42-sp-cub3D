@@ -6,35 +6,25 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 01:44:40 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/22 02:35:34 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/24 22:12:02 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
 
-static float	ft_normalize_angle(float angle)
-{
-	angle = fmod(angle, (2 * PI));
-	if (angle < 0)
-		angle = 2 * PI + angle;
-	return (angle);
-}
-
 static int	ft_has_collision(t_scene *scene, float x, float y)
 {
-	int	tile_x;
-	int	tile_y;
-	int	tile_x_size;
-	int	tile_y_size;
+	int	x0;
+	int	y0;
+	int	x1;
+	int	y1;
 
-	tile_x = floor(x / TILE_SIZE);
-	tile_y = floor(y / TILE_SIZE);
-	tile_x_size = floor((x + PLAYER_WIDTH) / TILE_SIZE);
-	tile_y_size = floor((y + PLAYER_HEIGHT) / TILE_SIZE);
-	if (scene->map[tile_y][tile_x] == '1' || \
-		scene->map[tile_y][tile_x_size] == '1' || \
-		scene->map[tile_y_size][tile_x] == '1' || \
-		scene->map[tile_y_size][tile_x_size] == '1')
+	x0 = floor((x - 1 - PLAYER_WIDTH / 2)  / TILE_SIZE);
+	y0 = floor((y - 1 - PLAYER_HEIGHT / 2) / TILE_SIZE);
+	x1 = floor((x + 1 + PLAYER_WIDTH / 2) / TILE_SIZE);
+	y1 = floor((y + 1 + PLAYER_HEIGHT / 2) / TILE_SIZE);
+	if (scene->map[y0][x0] == '1' || scene->map[y0][x1] == '1' || \
+		scene->map[y1][x0] == '1' || scene->map[y1][x1] == '1')
 		return (1);
 	return (0);
 }

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_update.c                                        :+:      :+:    :+:   */
+/*   ft_normalize_angle.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 01:12:28 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/24 22:40:47 by vcordeir         ###   ########.fr       */
+/*   Created: 2022/05/24 21:49:21 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/05/24 21:49:37 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
 
-int	ft_update(t_game_set *game_set)
+float	ft_normalize_angle(float angle)
 {
-	ft_move_player(game_set);
-	ft_cast_rays(game_set);
-	ft_render(game_set);
-	return (0);
+	angle = fmod(angle, (2 * PI));
+	if (angle < 0)
+		angle = 2 * PI + angle;
+	return (angle);
 }

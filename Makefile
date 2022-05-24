@@ -16,7 +16,12 @@ SRC			:=	main.c \
 				draw/ft_build_images.c \
 				draw/ft_draw_line.c \
 				draw/ft_draw_player.c \
+				draw/ft_draw_rays.c \
 				draw/ft_draw_square.c \
+				exit/ft_free_map.c \
+				exit/ft_free_scene.c \
+				exit/ft_free.c \
+				exit/ft_print_error.c \
 				input/ft_assets_checker.c \
 				input/ft_check_input.c \
 				input/ft_get_all_infos.c \
@@ -29,10 +34,12 @@ SRC			:=	main.c \
 				map/ft_map_checker.c \
 				map/ft_load_player.c \
 				map/ft_get_map.c \
-				utils/ft_free_map.c \
-				utils/ft_free_scene.c \
-				utils/ft_free.c \
-				utils/ft_print_error.c
+				raycasting/ft_cast_rays.c \
+				raycasting/ft_horizontal_ray.c \
+				raycasting/ft_vertical_ray.c \
+				utils/ft_has_ray_collision.c \
+				utils/ft_normalize_angle.c \
+				utils/ft_point_distance.c
 
 SRC_FOLDER 	:= src
 

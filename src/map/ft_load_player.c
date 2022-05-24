@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:55:50 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/22 02:36:26 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/24 22:07:11 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ static void	ft_load_player_positions(t_scene *scene, t_player *player)
 			if (scene->map[i][j] == 'N' || scene->map[i][j] == 'S' || \
 				scene->map[i][j] == 'W' || scene->map[i][j] == 'E')
 			{
-				player->x = j * TILE_SIZE + (TILE_SIZE - PLAYER_WIDTH) / 2;
-				player->y = i * TILE_SIZE + (TILE_SIZE - PLAYER_HEIGHT) / 2;
+				player->x = j * TILE_SIZE + TILE_SIZE / 2;
+				player->y = i * TILE_SIZE + TILE_SIZE / 2;
 				player->initial_direction = scene->map[i][j];
 			}
 			j++;

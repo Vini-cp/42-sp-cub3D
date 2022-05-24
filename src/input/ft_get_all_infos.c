@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:05:24 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/22 02:40:27 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/22 02:45:43 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	ft_initialize_game_set(t_game_set *game_set)
 	game_set->assets = NULL;
 	game_set->player = NULL;
 	game_set->window = NULL;
+	game_set->rays = NULL;
 }
 
 static void	ft_get_number_of_lines(char *map_path, t_scene *scene)

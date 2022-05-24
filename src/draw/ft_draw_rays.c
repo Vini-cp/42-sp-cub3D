@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_draw_line.c                                     :+:      :+:    :+:   */
+/*   ft_draw_rays.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 01:34:24 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/24 22:13:20 by vcordeir         ###   ########.fr       */
+/*   Created: 2022/05/23 16:42:10 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/05/24 23:47:35 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,23 @@ static void	ft_swap(int *a, int *b)
 	*b = temp;
 }
 
-static void	ft_initialize_line(t_line *line, t_player *player, float distance)
+static void	ft_initialize_line(t_line *line, t_player *player, t_ray *ray)
 {
 	line->x0 = player->x;
 	line->y0 = player->y;
-	line->x1 = cos(player->rotation_angle) * distance + line->x0;
-	line->y1 = sin(player->rotation_angle) * distance + line->y0;
+	line->x1 = ray->wall_hit_x;
+	line->y1 = ray->wall_hit_y;
 	line->step = 0;
 }
+
+// static void	ft_initialize(t_line *line, t_player *player, t_ray_helper *ray)
+// {
+// 	line->x0 = player->x;
+// 	line->y0 = player->y;
+// 	line->x1 = ray->wall_hit_x;
+// 	line->y1 = ray->wall_hit_y;
+// 	line->step = 0;
+// }
 
 static void	ft_check_deltas(t_line *line)
 {
@@ -87,11 +96,28 @@ static void	ft_print_line(t_line *line, t_window *window, int color)
 	}
 }
 
-void	ft_draw_line(t_window *window, t_player *player, float size, int color)
+void	ft_draw_rays(t_game_set *game_set, int color)
 {
+	int		strip_id;
 	t_line	line;
+	t_ray	*ray;
 
-	ft_initialize_line(&line, player, size);
-	ft_check_deltas(&line);
-	ft_print_line(&line, window, color);
+	strip_id = 0;
+	ray = game_set->rays;
+	while (strip_id < game_set->number_of_rays)
+	{
+		ft_initialize_line(&line, game_set->player, &ray[strip_id]);
+		ft_check_deltas(&line);
+		ft_print_line(&line, game_set->window, color);
+		// if (ray[strip_id].horizontal.distance != FLT_MAX || ray[strip_id].horizontal.distance != 0)
+		// {
+		// 	ft_initialize(&line, game_set->player, &ray[strip_id].horizontal);
+		// 	ft_check_deltas(&line);
+		// 	ft_print_line(&line, game_set->window, color);
+		// }
+		// ft_initialize(&line, game_set->player, &ray[strip_id].vertical);
+		// ft_check_deltas(&line);
+		// ft_print_line(&line, game_set->window, BLUE);
+		strip_id++;
+	}
 }

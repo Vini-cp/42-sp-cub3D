@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 00:52:21 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/22 02:35:51 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/24 23:34:11 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	ft_render_player(t_window *window,
 							t_assets *assets,
 							t_player *player)
 {
-	ft_put_image(window, (assets->player).img, player->x, player->y);
+	ft_put_image(window, (assets->player).img, player->x - PLAYER_WIDTH / 2, player->y - PLAYER_HEIGHT / 2);
 }
 
 void	ft_render(t_game_set *game_set)
@@ -54,4 +54,5 @@ void	ft_render(t_game_set *game_set)
 	ft_render_minimap(game_set->scene, game_set->window, game_set->assets);
 	ft_render_player(game_set->window, game_set->assets, game_set->player);
 	ft_draw_line(game_set->window, game_set->player, 25, DARK);
+	ft_draw_rays(game_set, RED);
 }
