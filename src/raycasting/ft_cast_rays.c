@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 03:00:23 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/25 00:13:37 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/25 02:36:28 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,10 @@
 
 static void	ft_ray_face_direction(t_ray *ray)
 {
-	if (ray->angle > 0 && ray->angle < PI)
-	{
-		ray->is_ray_facing_down = 1;
-		ray->is_ray_facing_up = 0;
-	}
-	else
-	{
-		ray->is_ray_facing_down = 0;
-		ray->is_ray_facing_up = 1;
-	}
-	if (ray->angle < 0.5 * PI || ray->angle > 1.5 * PI)
-	{
-		ray->is_ray_facing_right = 1;
-		ray->is_ray_facing_left = 0;
-	}
-	else
-	{
-		ray->is_ray_facing_right = 0;
-		ray->is_ray_facing_left = 1;
-	}
+	ray->is_ray_facing_down = ray->angle > 0 && ray->angle < PI;
+	ray->is_ray_facing_up = !ray->is_ray_facing_down;
+	ray->is_ray_facing_right = ray->angle < 0.5 * PI || ray->angle > 1.5 * PI;
+	ray->is_ray_facing_left = !ray->is_ray_facing_right;
 }
 
 static void	ft_define_distances(t_ray *ray, t_player *player)
@@ -87,7 +71,7 @@ void	ft_cast_rays(t_game_set *game_set)
 	float	ray_angle;
 	int		strip_id;
 
-	game_set->number_of_rays = 75;
+	game_set->number_of_rays = 350;
 	game_set->rays = malloc(game_set->number_of_rays * sizeof(t_ray));
 	field_of_view = FOV_ANGLE * PI / 180;
 	ray_angle = (game_set->player)->rotation_angle - (field_of_view / 2);
