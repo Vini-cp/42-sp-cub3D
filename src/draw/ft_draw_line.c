@@ -38,8 +38,8 @@ static void	ft_swap(int *a, int *b)
 
 static void	ft_initialize_line(t_line *line, t_player *player, float distance)
 {
-	line->x0 = player->x;
-	line->y0 = player->y;
+	line->x0 = player->x * SCALE;
+	line->y0 = player->y * SCALE;
 	line->x1 = cos(player->rotation_angle) * distance + line->x0;
 	line->y1 = sin(player->rotation_angle) * distance + line->y0;
 	line->step = 0;

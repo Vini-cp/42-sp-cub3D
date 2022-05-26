@@ -16,12 +16,16 @@ void	ft_draw_square(int x_start, int y_start, int color, t_window *window)
 {
 	int	x;
 	int	y;
+	int	x_end;
+	int	y_end;
 
-	y = y_start * TILE_SIZE;
-	while (y < y_start * TILE_SIZE + TILE_SIZE)
+	y = y_start * TILE_SIZE * SCALE;
+	y_end = (y_start * TILE_SIZE + TILE_SIZE) * SCALE;
+	x_end = (x_start * TILE_SIZE + TILE_SIZE) * SCALE;
+	while (y < y_end)
 	{
-		x = x_start * TILE_SIZE;
-		while (x < x_start * TILE_SIZE + TILE_SIZE)
+		x = x_start * TILE_SIZE * SCALE;
+		while (x < x_end)
 		{
 			mlx_pixel_put(window->mlx, window->win, x, y, color);
 			x++;

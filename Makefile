@@ -25,6 +25,7 @@ SRC			:=	main.c \
 				input/ft_assets_checker.c \
 				input/ft_check_input.c \
 				input/ft_get_all_infos.c \
+				input/ft_get_floor_and_ceiling_colors.c \
 				loop/ft_game_loop.c \
 				loop/ft_load_window.c \
 				loop/ft_move_player.c \
@@ -34,6 +35,7 @@ SRC			:=	main.c \
 				map/ft_map_checker.c \
 				map/ft_load_player.c \
 				map/ft_get_map.c \
+				raycasting/ft_3d_viewer.c \
 				raycasting/ft_cast_rays.c \
 				raycasting/ft_horizontal_ray.c \
 				raycasting/ft_vertical_ray.c \

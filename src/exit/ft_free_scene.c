@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:19:15 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/19 03:10:34 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/26 01:30:53 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_free_scene(void *param)
 		free(scene->east_texture);
 	if (scene->floor_color)
 		free(scene->floor_color);
-	if (scene->ceilling_color)
-		free(scene->ceilling_color);
+	if (scene->ceiling_color)
+		free(scene->ceiling_color);
 	free(scene);
 }

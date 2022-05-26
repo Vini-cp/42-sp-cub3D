@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/25 00:14:14 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/26 02:00:40 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@
 # define LEFT_ARROW 65361
 # define RIGHT_ARROW 65363
 
-# define TILE_SIZE 20
+# define TILE_SIZE 64
+# define SCALE 0.15
 # define LENGTH 800
 # define HEIGHT 600
 
@@ -50,6 +51,7 @@ typedef enum e_enum_error
 	E_MAP_IS_OPEN,
 	E_MAP_HAS_NO_SPAWNING_POSITION,
 	E_NULL_ASSET,
+	E_COLOR_NOT_DIGIT,
 	E_NO_PLAYER,
 	E_MLX,
 	E_MLX_WIN,
@@ -66,6 +68,7 @@ typedef struct s_window
 typedef struct s_game_set
 {
 	int			number_of_rays;
+	int			**color_buffer;
 	t_scene		*scene;
 	t_assets	*assets;
 	t_player	*player;
@@ -88,6 +91,7 @@ void	ft_print_error(t_enum_error error_code, void *param,
 void	ft_assets_checker(t_game_set *game_set);
 void	ft_check_input(int argc, char **argv);
 void	ft_get_all_infos(char *map_path, t_game_set *game_set);
+void	ft_get_floor_and_ceiling_colors(t_game_set *game_set);
 
 void	ft_game_loop(t_game_set *game_set);
 void	ft_load_window(t_game_set *game_set);
@@ -100,6 +104,7 @@ void	ft_is_map_open(t_scene *scene);
 void	ft_load_player(t_game_set *game_set);
 void	ft_map_checker(char *map_path, t_game_set *game_set);
 
+void	ft_3d_viewer(t_game_set *game_set);
 void	ft_cast_rays(t_game_set *game_set);
 void	ft_horizontal_ray(t_ray *ray, t_player *player, t_scene *scene);
 void	ft_vertical_ray(t_ray *ray, t_player *player, t_scene *scene);

@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 01:44:40 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/24 22:12:02 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/26 01:27:50 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_has_collision(t_scene *scene, float x, float y)
 	int	x1;
 	int	y1;
 
-	x0 = floor((x - 1 - PLAYER_WIDTH / 2)  / TILE_SIZE);
+	x0 = floor((x - 1 - PLAYER_WIDTH / 2) / TILE_SIZE);
 	y0 = floor((y - 1 - PLAYER_HEIGHT / 2) / TILE_SIZE);
 	x1 = floor((x + 1 + PLAYER_WIDTH / 2) / TILE_SIZE);
 	y1 = floor((y + 1 + PLAYER_HEIGHT / 2) / TILE_SIZE);

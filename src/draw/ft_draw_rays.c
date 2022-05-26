@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 16:42:10 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/24 23:47:35 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/26 01:26:33 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,12 @@ static void	ft_swap(int *a, int *b)
 
 static void	ft_initialize_line(t_line *line, t_player *player, t_ray *ray)
 {
-	line->x0 = player->x;
-	line->y0 = player->y;
-	line->x1 = ray->wall_hit_x;
-	line->y1 = ray->wall_hit_y;
+	line->x0 = player->x * SCALE;
+	line->y0 = player->y * SCALE;
+	line->x1 = ray->wall_hit_x * SCALE;
+	line->y1 = ray->wall_hit_y * SCALE;
 	line->step = 0;
 }
-
-// static void	ft_initialize(t_line *line, t_player *player, t_ray_helper *ray)
-// {
-// 	line->x0 = player->x;
-// 	line->y0 = player->y;
-// 	line->x1 = ray->wall_hit_x;
-// 	line->y1 = ray->wall_hit_y;
-// 	line->step = 0;
-// }
 
 static void	ft_check_deltas(t_line *line)
 {
@@ -109,15 +100,6 @@ void	ft_draw_rays(t_game_set *game_set, int color)
 		ft_initialize_line(&line, game_set->player, &ray[strip_id]);
 		ft_check_deltas(&line);
 		ft_print_line(&line, game_set->window, color);
-		// if (ray[strip_id].horizontal.distance != FLT_MAX || ray[strip_id].horizontal.distance != 0)
-		// {
-		// 	ft_initialize(&line, game_set->player, &ray[strip_id].horizontal);
-		// 	ft_check_deltas(&line);
-		// 	ft_print_line(&line, game_set->window, color);
-		// }
-		// ft_initialize(&line, game_set->player, &ray[strip_id].vertical);
-		// ft_check_deltas(&line);
-		// ft_print_line(&line, game_set->window, BLUE);
 		strip_id++;
 	}
 }

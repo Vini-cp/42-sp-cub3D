@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 03:35:30 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/25 02:20:41 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/26 01:30:08 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static void	ft_initialize_vertical_ray(t_ray *ray, t_player *player)
 		ray->vertical.xintercept += TILE_SIZE;
 	ray->vertical.yintercept = player->y + \
 		(ray->vertical.xintercept - player->x) * tan(ray->angle);
-	
 }
 
 static void	ft_calculate_incremental_step(t_ray *ray)

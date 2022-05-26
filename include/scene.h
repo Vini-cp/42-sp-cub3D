@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:17:56 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/22 02:32:58 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/26 01:53:18 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@
 # define PLAYER "./assets/player.xpm"
 # define WALL "./assets/wall.xpm"
 # define BACKGROUND "./assets/background.xpm"
-	
-# define RED 0x00FF0000
-# define BLUE 0x000000FF
-# define DARK 0x00000000
+
+# define RED 0xFFFF0000
+# define GREEN 0xFF00FF00
+# define BLUE 0xFF0000FF
+# define DARK 0xFF000000
+# define WHITE 0xFFFFFFFF
+# define GRAY 0xFF808080
+# define YELLOW 0xFF30FF30
 
 typedef struct s_image
 {
@@ -40,8 +44,8 @@ typedef struct s_assets
 	t_image	south;
 	t_image	west;
 	t_image	east;
-	t_image	floor;
-	t_image	ceilling;
+	int		floor_color;
+	int		ceiling_color;
 }	t_assets;
 
 typedef struct s_scene
@@ -53,7 +57,7 @@ typedef struct s_scene
 	char	*west_texture;
 	char	*east_texture;
 	char	*floor_color;
-	char	*ceilling_color;
+	char	*ceiling_color;
 	int		map_height;
 	int		map_length;
 	int		file_number_of_lines;

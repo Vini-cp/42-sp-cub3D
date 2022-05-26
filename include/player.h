@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:14:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/24 22:30:23 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/25 05:05:38 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # define PLAYER_WIDTH 10
 # define PLAYER_HEIGHT 10
-# define WALK_SPEED 0.4f
-# define ROT_SPEED 0.01f
+# define WALK_SPEED 5.0f
+# define ROT_SPEED 0.05f
 
 typedef struct s_player
 {
