@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 01:07:10 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/22 02:29:56 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 01:57:36 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,27 @@ static int	ft_key_release(int keycode, t_game_set *game_set)
 	return (0);
 }
 
+static int	ft_mouse_move(int x, int y, t_game_set *game_set)
+{
+	t_player	*player;
+
+	player = game_set->player;
+	if (x > 0 && x < LENGTH / 2 - 100)
+		player->turn_direction = -0.5;
+	if (x > LENGTH / 2 + 100 && x < LENGTH)
+		player->turn_direction = +0.5;
+	if (x > LENGTH / 2 - 100 && x < LENGTH / 2 + 100)
+		player->turn_direction = 0;
+	(void)y;
+	return (0);
+}
+
+static int	ft_mouse_exit(t_game_set *game_set)
+{
+	(game_set->player)->turn_direction = 0;
+	return (0);
+}
+
 void	ft_game_loop(t_game_set *game_set)
 {
 	t_window	*window;
@@ -68,6 +89,8 @@ void	ft_game_loop(t_game_set *game_set)
 	window = game_set->window;
 	mlx_hook(window->win, 2, (1L << 0), ft_key_press, game_set);
 	mlx_hook(window->win, 3, (1L << 1), ft_key_release, game_set);
+	mlx_hook(window->win, 6, (1L << 6), ft_mouse_move, game_set);
+	mlx_hook(window->win, 8, (1L << 5), ft_mouse_exit, game_set);
 	mlx_hook(window->win, 17, 0L, ft_exit_hook, game_set);
 	mlx_loop_hook(window->mlx, ft_update, game_set);
 	mlx_loop(window->mlx);
