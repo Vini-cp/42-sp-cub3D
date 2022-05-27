@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/26 02:00:40 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:05:02 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef enum e_enum_error
 	E_SUCCESS,
 	E_INVALID_INPUT,
 	E_INVALID_FILE_EXTENSION,
+	E_WRONG_COLOR_PARAMETER,
 	E_MALLOC,
 	E_MAP_HAS_EMPTY_LINES,
 	E_FILE_DOES_NOT_EXISTS,

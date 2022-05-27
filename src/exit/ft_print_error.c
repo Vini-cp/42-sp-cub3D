@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 03:43:27 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 21:10:07 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:05:17 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ static char	*ft_search_error(int error_code)
 	else if (error_code == E_INVALID_FILE_EXTENSION)
 		return ("File extension must be '.cub'");
 	else if (error_code == E_FILE_DOES_NOT_EXISTS)
-		return ("Try to open a file that does not exists");
+		return ("Tried to open a file that does not exists");
+	else if (error_code == E_WRONG_COLOR_PARAMETER)
+		return ("Floor and ceiling format: R,G,B (int x 3)");
 	else if (error_code == E_MALLOC)
 		return ("No more space on the heap");
 	else if (error_code == E_MAP_HAS_EMPTY_LINES)
@@ -34,6 +36,8 @@ static char	*ft_search_error(int error_code)
 		return ("Assets path must not be null");
 	else if (error_code == E_NO_PLAYER)
 		return ("Number of players must be strictly equals to one");
+	else if (error_code == E_MLX || error_code == E_MLX_WIN)
+		return ("Could't etablish a connection with mlx or create a window");
 	return ("No message error with this code.");
 }
 
