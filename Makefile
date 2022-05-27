@@ -22,6 +22,11 @@ SRC			:=	main.c \
 				exit/ft_free_scene.c \
 				exit/ft_free.c \
 				exit/ft_print_error.c \
+				hook/ft_exit_hook.c \
+				hook/ft_key_press.c \
+				hook/ft_key_release.c \
+				hook/ft_mouse_exit.c \
+				hook/ft_mouse_move.c \
 				input/ft_assets_checker.c \
 				input/ft_check_input.c \
 				input/ft_get_all_infos.c \

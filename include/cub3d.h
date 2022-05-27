@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 03:44:27 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 04:13:45 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,12 @@ void	ft_free_scene(void *param);
 void	ft_free(void *param);
 void	ft_print_error(t_enum_error error_code, void *param,
 			void (*free_param)(void *));
+
+int		ft_exit_hook(t_game_set *game_set);
+int		ft_key_press(int keycode, t_game_set *game_set);
+int		ft_key_release(int keycode, t_game_set *game_set);
+int		ft_mouse_exit(t_game_set *game_set);
+int		ft_mouse_move(int x, int y, t_game_set *game_set);
 
 void	ft_assets_checker(t_game_set *game_set);
 void	ft_check_input(int argc, char **argv);
