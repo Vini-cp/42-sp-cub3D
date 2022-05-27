@@ -86,4 +86,4 @@ valgrind:
 	valgrind --leak-check=full ./cub3d ./maps/minimalist.cub
 
 fullvalgrind:
-	valgrind --leak-check=full --show-leak-kinds=all ./cub3d ./maps/minimalist.cub
+	valgrind --leak-check=full --show-leak-kinds=all ./cub3d ./maps/test.cub

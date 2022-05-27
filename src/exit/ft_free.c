@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 00:13:06 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/22 02:39:33 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 23:25:11 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 static void	ft_destroy_image(t_window *window, t_image *image)
 {
 	mlx_destroy_image(window->mlx, image->img);
+}
+
+static void	ft_free_buffer(int **buffer, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(buffer[i]);
+		i++;
+	}
+	free(buffer);
 }
 
 void	ft_free(void *param)
@@ -30,9 +43,10 @@ void	ft_free(void *param)
 			free(game_set->player);
 		if (game_set->assets)
 		{
-			ft_destroy_image(game_set->window, &(game_set->assets)->player);
-			ft_destroy_image(game_set->window, &(game_set->assets)->wall);
-			ft_destroy_image(game_set->window, &(game_set->assets)->background);
+			ft_destroy_image(game_set->window, &game_set->assets->north);
+			ft_destroy_image(game_set->window, &game_set->assets->south);
+			ft_destroy_image(game_set->window, &game_set->assets->west);
+			ft_destroy_image(game_set->window, &game_set->assets->east);
 			free(game_set->assets);
 		}
 		if (game_set->window)
@@ -41,5 +55,9 @@ void	ft_free(void *param)
 			free((game_set->window)->mlx);
 			free(game_set->window);
 		}
+		if (game_set->rays)
+			free(game_set->rays);
+		if (game_set->color_buffer)
+			ft_free_buffer(game_set->color_buffer, game_set->window_height);
 	}
 }

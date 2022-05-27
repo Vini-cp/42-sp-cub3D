@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:17:56 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/26 01:53:18 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 23:19:35 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ typedef struct s_image
 
 typedef struct s_assets
 {
-	t_image	player;
-	t_image	wall;
-	t_image	background;
 	t_image	enemy;
 	t_image	north;
 	t_image	south;

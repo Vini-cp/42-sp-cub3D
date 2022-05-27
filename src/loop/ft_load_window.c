@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:56:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 03:51:24 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 23:29:10 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	ft_load_window(t_game_set *game_set)
 		game_set->window_height, "Cub3D");
 	if (window->win == NULL)
 		ft_print_error(E_MLX_WIN, game_set, ft_free);
+	game_set->number_of_rays = game_set->window_width;
+	game_set->rays = malloc(game_set->number_of_rays * sizeof(t_ray));
 }

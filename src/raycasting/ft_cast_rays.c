@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 03:00:23 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 03:54:49 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 23:27:36 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,6 @@ void	ft_cast_rays(t_game_set *game_set)
 	float	distance_projected;
 	int		strip_id;
 
-	game_set->number_of_rays = game_set->window_width;
-	game_set->rays = malloc(game_set->number_of_rays * sizeof(t_ray));
 	field_of_view = FOV_ANGLE * PI / 180;
 	strip_id = 0;
 	distance_projected = (game_set->window_width / 2) / tan(field_of_view / 2);
