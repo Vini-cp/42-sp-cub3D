@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 00:13:06 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 23:25:11 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/28 01:47:05 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	ft_destroy_image(t_window *window, t_image *image)
 {
 	mlx_destroy_image(window->mlx, image->img);
+	free(image->address);
 }
 
 static void	ft_free_buffer(int **buffer, int size)

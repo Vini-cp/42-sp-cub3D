@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:17:56 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 23:19:35 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 23:44:39 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ typedef struct s_image
 	void	*img;
 	int		width;
 	int		height;
+	char	*address;
+	int		bits_per_pixel;
+	int		size_line;
+	int		endian;
 }	t_image;
 
 typedef struct s_assets
