@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 03:05:02 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:44:27 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@
 
 # define TILE_SIZE 64
 # define SCALE 0.15
-# define LENGTH 800
-# define HEIGHT 600
 
 typedef enum e_enum_error
 {
@@ -69,6 +67,8 @@ typedef struct s_window
 typedef struct s_game_set
 {
 	int			number_of_rays;
+	int			window_width;
+	int			window_height;
 	int			**color_buffer;
 	t_scene		*scene;
 	t_assets	*assets;

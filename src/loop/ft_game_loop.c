@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 01:07:10 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 01:57:36 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:43:38 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,13 @@ static int	ft_mouse_move(int x, int y, t_game_set *game_set)
 	t_player	*player;
 
 	player = game_set->player;
-	if (x > 0 && x < LENGTH / 2 - 100)
+	if (x > 0 && x < game_set->window_width / 2 - 100)
 		player->turn_direction = -0.5;
-	if (x > LENGTH / 2 + 100 && x < LENGTH)
+	if (x > game_set->window_width / 2 + 100 && \
+		x < game_set->window_width)
 		player->turn_direction = +0.5;
-	if (x > LENGTH / 2 - 100 && x < LENGTH / 2 + 100)
+	if (x > game_set->window_width / 2 - 100 && \
+		x < game_set->window_width / 2 + 100)
 		player->turn_direction = 0;
 	(void)y;
 	return (0);

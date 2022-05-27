@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 00:52:21 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/26 01:52:47 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 03:53:26 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ static void	ft_draw_color_buffer(t_game_set *game_set)
 	int	j;
 
 	i = 0;
-	while (i < HEIGHT)
+	while (i < game_set->window_height)
 	{
 		j = 0;
-		while (j < LENGTH)
+		while (j < game_set->window_width)
 		{
 			if (j >= (game_set->scene)->map_length * TILE_SIZE * SCALE || \
 				i >= (game_set->scene)->map_height * TILE_SIZE * SCALE)
