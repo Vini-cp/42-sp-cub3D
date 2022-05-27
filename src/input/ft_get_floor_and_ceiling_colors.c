@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:27:05 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 03:33:54 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/05/27 04:05:33 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,19 @@ static void	ft_get_color(int *texture, char *color)
 	free(rgb);
 }
 
+static void	ft_free_rgb(char **rgb, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(rgb[i]);
+		i++;
+	}
+	free(rgb);
+}
+
 static t_enum_error	ft_check_color(char *color)
 {
 	char			**rgb;
@@ -40,7 +53,6 @@ static t_enum_error	ft_check_color(char *color)
 	while (rgb[i] != NULL)
 	{
 		j = 0;
-		
 		while (j < (int) ft_strlen(rgb[i]))
 		{
 			if (!ft_isdigit(rgb[i][j]))
@@ -51,13 +63,7 @@ static t_enum_error	ft_check_color(char *color)
 	}
 	if (i != 3)
 		error_code = E_WRONG_COLOR_PARAMETER;
-	j = 0;
-	while (j < i)
-	{
-		free(rgb[j]);
-		j++;
-	}
-	free(rgb);
+	ft_free_rgb(rgb, i);
 	return (error_code);
 }
 
