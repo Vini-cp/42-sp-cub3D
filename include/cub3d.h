@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/06/03 18:17:28 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/03 23:50:17 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ void	ft_draw_player(int x, int y, int color, t_window *window);
 void	ft_draw_rays(t_game_set *game_set, int color);
 void	ft_draw_square(int x_start, int y_start, int color, t_window *window);
 
+void	ft_free_assets(t_game_set *game_set);
+void	ft_free_buffer(int **buffer, int size);
 void	ft_free_map(char **map, int size);
 void	ft_free_scene(void *param);
 void	ft_free(void *param);

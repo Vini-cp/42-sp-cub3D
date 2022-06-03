@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 21:51:34 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/06/03 00:56:53 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/03 23:23:57 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	ft_has_ray_collision(t_scene *scene, t_ray_helper *ray)
 		ft_set_collision(ray);
 		return (1);
 	}
-	else if (scene->map[tile_y][tile_x] == '1' || scene->map[tile_y][tile_x] == 'C')
+	else if (scene->map[tile_y][tile_x] == '1' || \
+			scene->map[tile_y][tile_x] == 'C')
 	{
 		ft_set_collision(ray);
 		ray->wall_content = scene->map[tile_y][tile_x];

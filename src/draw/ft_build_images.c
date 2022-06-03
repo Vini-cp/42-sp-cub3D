@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 03:53:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 23:47:00 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/03 23:44:11 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static void	ft_create_color_buffer(t_game_set *game_set)
 	game_set->color_buffer = malloc(game_set->window_height * sizeof(int *));
 	while (i < game_set->window_height)
 	{
-		game_set->color_buffer[i] = malloc(game_set->window_width * sizeof(int));
+		game_set->color_buffer[i] = \
+			malloc(game_set->window_width * sizeof(int));
 		i++;
 	}
 }
@@ -58,10 +59,10 @@ void	ft_build_images(t_game_set *game_set)
 
 	assets = game_set->assets;
 	scene = game_set->scene;
-	ft_to_image(&assets->north,scene->north_texture, game_set->window);
-	ft_to_image(&assets->south,scene->south_texture, game_set->window);
-	ft_to_image(&assets->west,scene->west_texture, game_set->window);
-	ft_to_image(&assets->east,scene->east_texture, game_set->window);
+	ft_to_image(&assets->north, scene->north_texture, game_set->window);
+	ft_to_image(&assets->south, scene->south_texture, game_set->window);
+	ft_to_image(&assets->west, scene->west_texture, game_set->window);
+	ft_to_image(&assets->east, scene->east_texture, game_set->window);
 	ft_create_color_buffer(game_set);
 	ft_clear_color_buffer(game_set);
 }

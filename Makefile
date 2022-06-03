@@ -18,6 +18,8 @@ SRC			:=	main.c \
 				draw/ft_draw_player.c \
 				draw/ft_draw_rays.c \
 				draw/ft_draw_square.c \
+				exit/ft_free_assets.c \
+				exit/ft_free_buffer.c \
 				exit/ft_free_map.c \
 				exit/ft_free_scene.c \
 				exit/ft_free.c \
@@ -85,7 +87,7 @@ do	: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LFLAGS)
 
 valgrind:
-	valgrind --leak-check=full ./cub3d ./maps/minimalist.cub
+	valgrind --leak-check=full ./cub3d ./maps/test.cub
 
 fullvalgrind:
 	valgrind --leak-check=full --show-leak-kinds=all ./cub3d ./maps/test.cub

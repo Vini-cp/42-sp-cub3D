@@ -6,14 +6,14 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:54:45 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/06/03 23:16:35 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/03 23:23:41 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
 
-# define DELTA_ANGLE 0.00001
-# define DOOR_DISTANCE 100.0
+#define DELTA_ANGLE 0.00001
+#define DOOR_DISTANCE 100.0
 
 static void	ft_close_door(t_player *player, char **map)
 {
@@ -27,7 +27,8 @@ static void	ft_close_door(t_player *player, char **map)
 		x = floor((player->x + i * cos(player->rotation_angle)) / TILE_SIZE);
 		y = floor((player->y + i * sin(player->rotation_angle)) / TILE_SIZE);
 		if (map[y][x] == 'O' && \
-			!(x == floor(player->x / TILE_SIZE) && y == floor(player->y / TILE_SIZE)))
+			!(x == floor(player->x / TILE_SIZE) && \
+			y == floor(player->y / TILE_SIZE)))
 		{
 			map[y][x] = 'C';
 			return ;
@@ -59,9 +60,10 @@ void	ft_open_close_door(t_game_set *game_set)
 	i = 0;
 	while (i < game_set->number_of_rays)
 	{
-		if (fabs(ray[i].angle -  game_set->player->rotation_angle) < DELTA_ANGLE)
+		if (fabs(ray[i].angle - game_set->player->rotation_angle) < DELTA_ANGLE)
 		{
-			if (ray[i].wall_hit_content == 'C' && ray[i].distance < DOOR_DISTANCE)
+			if (ray[i].wall_hit_content == 'C' && \
+				ray[i].distance < DOOR_DISTANCE)
 			{
 				ft_open_door(game_set->scene->map, ray[i]);
 				break ;
