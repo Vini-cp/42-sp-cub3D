@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 04:13:45 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:17:28 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define PI 3.1415926535f
 
 # define ESC 65307
+# define OPEN_DOOR 32
 # define UP 119
 # define DOWN 115
 # define LEFT 97
@@ -118,6 +119,8 @@ void	ft_vertical_ray(t_ray *ray, t_player *player, t_scene *scene);
 
 int		ft_has_ray_collision(t_scene *scene, t_ray_helper *ray);
 float	ft_normalize_angle(float angle);
+void	ft_open_close_door(t_game_set *game_set);
+int		ft_player_collision(t_scene *scene, float x, float y);
 float	ft_point_distance(float x1, float y1, float x2, float y2);
 
 #endif

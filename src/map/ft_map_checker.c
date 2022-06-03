@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 03:22:06 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/13 22:44:33 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/03 00:50:11 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ static void	ft_map_has_invalid_chars(t_scene *scene)
 			if (scene->map[i][j] != ' ' && scene->map[i][j] != '0' \
 				&& scene->map[i][j] != '1' && scene->map[i][j] != 'N' \
 				&& scene->map[i][j] != 'S' && scene->map[i][j] != 'E' \
-				&& scene->map[i][j] != 'W')
+				&& scene->map[i][j] != 'W' && scene->map[i][j] != 'C' \
+				&& scene->map[i][j] != 'O')
 				ft_print_error(E_MAP_HAS_INVALID_CHARS, scene, ft_free_scene);
 			j++;
 		}

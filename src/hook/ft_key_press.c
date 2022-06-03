@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 04:11:17 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 04:12:58 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:18:47 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ int	ft_key_press(int keycode, t_game_set *game_set)
 		player->turn_direction = -1;
 	if (keycode == RIGHT_ARROW)
 		player->turn_direction = +1;
+	if (keycode == OPEN_DOOR)
+		ft_open_close_door(game_set);
 	return (0);
 }

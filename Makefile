@@ -46,6 +46,8 @@ SRC			:=	main.c \
 				raycasting/ft_vertical_ray.c \
 				utils/ft_has_ray_collision.c \
 				utils/ft_normalize_angle.c \
+				utils/ft_open_close_door.c \
+				utils/ft_player_collision.c \
 				utils/ft_point_distance.c
 
 SRC_FOLDER 	:= src

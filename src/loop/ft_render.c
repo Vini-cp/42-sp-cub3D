@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 00:52:21 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 03:53:26 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:48:43 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static void	ft_render_minimap(t_window *window, t_scene *scene)
 		{
 			if (scene->map[i][j] == '1')
 				ft_draw_square(j, i, WHITE, window);
+			else if (scene->map[i][j] == 'C')
+				ft_draw_square(j, i, GREEN, window);
 			else if (scene->map[i][j] != '1' && scene->map[i][j] != ' ')
 				ft_draw_square(j, i, GRAY, window);
 			j++;

@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:50:10 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 03:45:30 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:50:51 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,9 @@ static void	ft_create_walls(t_game_set *game_set,
 	y = viewer->wall_top_pixel;
 	while (y < viewer->wall_bottom_pixel)
 	{
-		if (game_set->rays[strip_id].was_hit_vertical)
+		if (game_set->rays[strip_id].wall_hit_content == 'C')
+			game_set->color_buffer[y][strip_id] = GREEN;
+		else if (game_set->rays[strip_id].was_hit_vertical)
 		{
 			if (game_set->rays[strip_id].is_ray_facing_right)
 				game_set->color_buffer[y][strip_id] = 0xFF0000FF;
