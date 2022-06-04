@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 00:13:06 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/06/03 23:48:57 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/04 22:49:21 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void	ft_free(void *param)
 		if (game_set->rays)
 			free(game_set->rays);
 		if (game_set->color_buffer)
-			ft_free_buffer(game_set->color_buffer, game_set->window_height);
+			ft_free_2d_array(game_set->color_buffer, game_set->window_height);
 	}
 }
