@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:27:05 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 04:05:33 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/05 02:30:06 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ static void	ft_get_color(int *texture, char *color)
 	char	**rgb;
 
 	rgb = ft_split(color, ',');
-	*texture = (ft_atoi(rgb[2]) & 0xFF);
-	*texture += (ft_atoi(rgb[1]) & 0xFF) << 8;
-	*texture += (ft_atoi(rgb[0]) & 0xFF) << 16;
-	*texture += (255 & 0xFF) << 24;
+	*texture = \
+		((255 & 0xff) << 24) + \
+		((ft_atoi(rgb[0]) & 0xff) << 16) + \
+		((ft_atoi(rgb[1]) & 0xff) << 8) + \
+		(ft_atoi(rgb[2]) & 0xff);
 	free(rgb[2]);
 	free(rgb[1]);
 	free(rgb[0]);

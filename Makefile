@@ -18,9 +18,9 @@ SRC			:=	main.c \
 				draw/ft_draw_player.c \
 				draw/ft_draw_rays.c \
 				draw/ft_draw_square.c \
+				exit/ft_free_2d_array_char.c \
+				exit/ft_free_2d_array_int.c \
 				exit/ft_free_assets.c \
-				exit/ft_free_buffer.c \
-				exit/ft_free_map.c \
 				exit/ft_free_scene.c \
 				exit/ft_free.c \
 				exit/ft_print_error.c \
@@ -44,6 +44,7 @@ SRC			:=	main.c \
 				map/ft_get_map.c \
 				raycasting/ft_3d_viewer.c \
 				raycasting/ft_cast_rays.c \
+				raycasting/ft_create_walls.c \
 				raycasting/ft_horizontal_ray.c \
 				raycasting/ft_vertical_ray.c \
 				utils/ft_has_ray_collision.c \

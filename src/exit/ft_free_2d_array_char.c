@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_2d_array.c                                 :+:      :+:    :+:   */
+/*   ft_free_2d_array_char.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 00:14:29 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/06/04 22:47:22 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/04 23:36:05 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
 
-void	ft_free_2d_array(char **array, int size)
+void	ft_free_2d_array_char(char **array, int size)
 {
 	int	i;
 

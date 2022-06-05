@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 00:13:06 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/06/04 22:49:21 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/05 02:28:41 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,12 @@ void	ft_free(void *param)
 			ft_free_assets(game_set);
 		if (game_set->window)
 		{
-			mlx_destroy_display((game_set->window)->mlx);
-			free((game_set->window)->mlx);
-			free(game_set->window);
+			mlx_destroy_window(game_set->window->mlx, game_set->window->win);
+			free(game_set->window->mlx);
 		}
 		if (game_set->rays)
 			free(game_set->rays);
 		if (game_set->color_buffer)
-			ft_free_2d_array(game_set->color_buffer, game_set->window_height);
+			ft_free_2d_array_int(game_set->color_buffer, game_set->window_height);
 	}
 }

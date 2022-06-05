@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 02:25:19 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/06/03 23:50:17 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/04 23:37:48 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ void	ft_draw_player(int x, int y, int color, t_window *window);
 void	ft_draw_rays(t_game_set *game_set, int color);
 void	ft_draw_square(int x_start, int y_start, int color, t_window *window);
 
+void	ft_free_2d_array_char(char **array, int size);
+void	ft_free_2d_array_int(int **array, int size);
 void	ft_free_assets(t_game_set *game_set);
-void	ft_free_buffer(int **buffer, int size);
-void	ft_free_map(char **map, int size);
 void	ft_free_scene(void *param);
 void	ft_free(void *param);
 void	ft_print_error(t_enum_error error_code, void *param,
@@ -116,6 +116,8 @@ void	ft_map_checker(char *map_path, t_game_set *game_set);
 
 void	ft_3d_viewer(t_game_set *game_set);
 void	ft_cast_rays(t_game_set *game_set);
+void	ft_create_walls(t_game_set *game_set, t_3d_viewer_helper *viewer, \
+			int strip_id, float x_scale);
 void	ft_horizontal_ray(t_ray *ray, t_player *player, t_scene *scene);
 void	ft_vertical_ray(t_ray *ray, t_player *player, t_scene *scene);
 

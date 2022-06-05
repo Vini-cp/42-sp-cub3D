@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:17:56 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/27 23:44:39 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/05 03:35:58 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 
 # define NUMBER_OF_ASSETS 6
 
-# define PLAYER "./assets/player.xpm"
-# define WALL "./assets/wall.xpm"
-# define BACKGROUND "./assets/background.xpm"
+# define DOOR_TEXTURE "./assets/door.xpm"
 
 # define RED 0xFFFF0000
 # define GREEN 0xFF00FF00
@@ -33,6 +31,7 @@ typedef struct s_image
 	int		width;
 	int		height;
 	char	*address;
+	int		**buffer;
 	int		bits_per_pixel;
 	int		size_line;
 	int		endian;
@@ -45,6 +44,7 @@ typedef struct s_assets
 	t_image	south;
 	t_image	west;
 	t_image	east;
+	t_image	door;
 	int		floor_color;
 	int		ceiling_color;
 }	t_assets;

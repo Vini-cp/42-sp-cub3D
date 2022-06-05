@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 01:37:05 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/05/23 16:45:52 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/06/04 21:58:47 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,15 @@ typedef struct s_ray
 	t_ray_helper	horizontal;
 	t_ray_helper	vertical;
 }	t_ray;
+
+typedef struct s_3d_viewer_helper
+{
+	float	perpendicular_distance;
+	float	distance_projected;
+	float	projected_wall_height;
+	int		wall_strip_height;
+	int		wall_top_pixel;
+	int		wall_bottom_pixel;
+}	t_3d_viewer_helper;
 
 #endif
